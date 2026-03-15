@@ -1,13 +1,13 @@
-<template>
-  <div class="bg-blue-500 text-white p-4">
-    Tailwind fonctionne !
-  </div>
-</template>
-
 <script setup lang="ts">
-// rien pour l'instant
+import Sidebar from './components/layout/Sidebar.vue'
 </script>
 
-<style>
-/* pas de scoped ici */
-</style>
+<template>
+  <div class="flex">
+    <Sidebar />
+
+    <main class="flex-1 p-6 bg-gray-100 min-h-screen">
+      <router-view />
+    </main>
+  </div>
+</template>

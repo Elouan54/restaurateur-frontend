@@ -1,17 +1,20 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import DashboardView from '../views/DashboardView.vue'
 
-const routes = [
-  {
-    path: '/', // ← la route par défaut
-    name: 'Dashboard',
-    component: DashboardView
-  }
-]
+import DashboardView from '../views/DashboardView.vue'
+import RestaurantsView from '../views/RestaurantsView.vue'
 
 const router = createRouter({
   history: createWebHistory(),
-  routes
+  routes: [
+    {
+      path: '/',
+      component: DashboardView
+    },
+    {
+      path: '/restaurants',
+      component: RestaurantsView
+    }
+  ]
 })
 
 export default router

@@ -44,7 +44,7 @@
 <script lang="ts" setup>
 import { ref } from 'vue'
 import { useRouter } from 'vue-router'
-import { useUserStore } from '../store/userStore'
+import { useUserStore } from '../stores/userStore'
 import axios from 'axios'
 
 // States du formulaire
