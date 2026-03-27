@@ -5,7 +5,7 @@ import { api } from '../services/api'
 const restaurants = ref<any[]>([])
 
 const fetchRestaurants = async () => {
-  const response = await api.get('/restaurants')
+  const response = await api.get('/public/restaurants')
   restaurants.value = response.data
 }
 
@@ -22,9 +22,11 @@ onMounted(() => {
       <table class="w-full text-left">
         <thead class="bg-gray-100">
           <tr>
-            <th class="p-3">ID</th>
+            <th class="p-3">Id</th>
             <th class="p-3">Nom</th>
-            <th class="p-3">Ville</th>
+            <th class="p-3">Adresse Web</th>
+            <th class="p-3">image</th>
+            <th class="p-3">categories</th>
           </tr>
         </thead>
 
@@ -35,8 +37,10 @@ onMounted(() => {
             class="border-t hover:bg-gray-50"
           >
             <td class="p-3">{{ restaurant.id }}</td>
-            <td class="p-3">{{ restaurant.nom }}</td>
-            <td class="p-3">{{ restaurant.ville }}</td>
+            <td class="p-3">{{ restaurant.name }}</td>
+            <td class="p-3">{{ restaurant.slug }}</td>
+            <td class="p-3">{{ restaurant.image }}</td>
+            <td class="p-3">{{ restaurant.categories }}</td>
           </tr>
         </tbody>
       </table>

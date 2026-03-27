@@ -11,7 +11,7 @@ const error = ref('')
 
 const login = async () => {
   try {
-    const response = await axios.post('http://localhost:8000/api/login_check', {
+    const response = await axios.post('https://localhost:8000/api/login_check', {
       email: email.value,
       password: password.value
     })
@@ -19,6 +19,9 @@ const login = async () => {
     const token = response.data.token
 
     localStorage.setItem('token', token)
+
+    
+    console.log(localStorage)
 
     router.push('/')
   } catch (e) {
